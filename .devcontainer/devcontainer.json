@@ -1,0 +1,8 @@
+{
+    // Use Docker Compose instead of a single image
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspace"
+
+    // Add other necessary configurations here
+}

@@ -1,0 +1,21 @@
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/universal:2
+    profiles: [dev-image]
+    volumes:
+      - .:/workspace:cached
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    profiles: [database]
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: password@123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
